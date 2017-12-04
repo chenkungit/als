@@ -1,0 +1,89 @@
+
+body{
+    font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",STHeiti,"WenQuanYi Micro Hei",Helvetica,Arial,sans-serif;
+}
+.uArticle{
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2)
+}
+.uArticle:hover{
+    box-shadow: 0 2px 40px rgba(0,0,0,.2)
+}
+.post {
+    padding: 30px;
+    background: #fff;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.post-head{
+    text-align: center;
+}
+.post-title{
+    margin: 0;
+    font-size: 2.0em;
+    line-height: 1.0em;
+    color: inherit;
+    padding-bottom: 10px;
+    font-family: Consolas, monospace;
+}
+a:link {
+    text-decoration: none;
+}
+.author{
+    font-size: 13px;
+    color: #bdb7b7;
+    letter-spacing: 1px;
+    background-color: white;
+}
+.display{
+    ont-size: 13px;
+    color: #bdb7b7;
+    background-color: #f9f9f9;
+    letter-spacing: 1px;
+    padding-left: 0;
+    padding-bottom: 2px;
+}
+.body{
+    padding-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    color: #999;
+    letter-spacing: 2px;
+}
+.line-limte-length
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; //文本不换行，这样超出一行的部分被截取，显示...
+}
+.copyright{
+    width:100%;
+    background: white;
+    font-size: 13px;
+    text-align: center;
+    color: #999;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+.footer{
+    align-content: center;
+}
+.a-login{
+    padding-top: 10px;
+    font-size: 10px;
+    font-family:courier, monospace;
+}
+.a-forget{
+    padding-top: 10px;
+    text-align: right;
+    font-size: 10px;
+    font-family: courier, monospace;
+
+}
+.tags{
+    padding-left: 0;
+    padding-bottom: 20;
+}
