@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Comments;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,8 @@ class ArticlesController extends Controller
     {
         $articles = Article::latest()->published()->paginate(5);
         //$articles = Article::paginate(5)->published()->get();
-        return view('articles.index',compact('articles'));
+        $recentArticles = Article::orderby('hits','desc')->take(6)->get();
+        return view('articles.index',compact('articles','recentArticles'));
     }
 
     /**
@@ -31,7 +33,8 @@ class ArticlesController extends Controller
     public  function search($column,$condition,$character)
     {
         $articles = Article::latest()->searchColumn($column,$condition,$character)->paginate(5);
-        return view('articles.index',compact('articles'));
+        $recentArticles = Article::orderby('hits','desc')->take(6)->get();
+        return view('articles.index',compact('articles','recentArticles'));
     }
 
     /**
@@ -89,7 +92,14 @@ class ArticlesController extends Controller
     public function show($id)
     {
         $articles = Article::findOrFail($id);
-        return view('articles.show',compact('articles'));
+        $articles->hits = $articles->hits+1;
+
+        $articles->update();
+        //最热文章
+        $recentArticles = Article::orderby('hits','desc')->take(6)->get();
+        //此文章评论
+        $comments = Comments::latest()->where('article_id','=',$id)->paginate(5);
+        return view('articles.show',compact('articles','recentArticles','comments'));
     }
 
     /**

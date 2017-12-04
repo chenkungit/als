@@ -17,7 +17,7 @@
                          <ul class="nav navbar-nav">
                              <li class=""><a href="{{url('articles/create')}}"><span class="glyphicon glyphicon-pencil"></span> 发帖</a></li>
                              <li class="" onclick="changestatue(this)"><a href="{{url('articles')}}"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
-                             <li class="" onclick="changestatue(this)"><a href="{{url('articles/search/category/T/=')}}"><span class="glyphicon glyphicon-fire"></span> 技术分享</a></li>
+                             <li class="" onclick="changestatue(this)"><a href="{{url('articles/search/category/T/=')}}"><span class="glyphicon glyphicon-globe"></span> 技术分享</a></li>
                              <li class="" onclick="changestatue(this)"><a href="{{url('articles/search/category/N/=')}}"><span class="glyphicon glyphicon-tint"></span> 生活随笔</a></li>
                              <li class="" onclick="changestatue(this)"><a href="{{url('articles/about')}}"><span class="glyphicon glyphicon-question-sign"></span> 关于</a></li>
                          </ul>
@@ -36,7 +36,7 @@
                          @else
                              {{--已登录显示登录头像--}}
 
-                                 <img id="uImg" src="{{url('upload/images/2017-12-01jYOYU7ofJz.jpg')}}" class="img-circle "  style="width: 40px;height: 40px;margin-left: 10px"/>
+                                 <img id="uImg" src="{{url('/logo/default.jpg')}}" class="img-circle "  style="width: 40px;height: 40px;margin-left: 10px"/>
                                  <button id="userName" class="btn btn-link navbar-btn dropdown-toggle" data-toggle="dropdown"><span class="badge">{{Auth::user()->name}}</span></button>
                                  {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">下拉菜单</a>--}}
                                  <ul class="dropdown-menu">

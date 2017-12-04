@@ -12,6 +12,7 @@
     <script src="{{url('ckeditor/adapters/jquery.js')}}"></script>
     <script src="{{url('js/bootstrap.min.js')}}"></script>
     <script src="{{url('js/app.js')}}"></script>
+    <link href="https://cdn.bootcss.com/octicons/4.4.0/font/octicons.css" rel="stylesheet">
     <style>
          /*隐藏滚动条*/
         ::-webkit-scrollbar {display:none}

@@ -9,6 +9,9 @@ body{
 .uArticle:hover{
     box-shadow: 0 2px 40px rgba(0,0,0,.2)
 }
+.panel:hover{
+    box-shadow: 0 2px 40px rgba(0,0,0,.2)
+}
 .post {
     padding: 30px;
     background: #fff;
@@ -86,4 +89,14 @@ a:link {
 .tags{
     padding-left: 0;
     padding-bottom: 20;
+}
+.panel-list
+{
+    margin-top: 10px;
+}
+.comment-time
+{
+    font-size: 13px;
+    color: #bdb7b7;
+    letter-spacing: 1px;
 }

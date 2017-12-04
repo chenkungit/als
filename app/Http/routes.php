@@ -28,6 +28,7 @@ Route::get('/','ArticlesController@index');
 //
 //Route::get('/articles/{id}/edit','ArticlesController@edit');
 //一键注册全部路由
+Route::post('comments','CommentsController@store');
 Route::get('articles/about','ArticlesController@about');
 Route::post('articles/image','ArticlesController@image');
 Route::post('articles/search','ArticlesController@postSearch');
