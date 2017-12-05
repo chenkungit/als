@@ -6,13 +6,14 @@
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('css/app.css')}}">
+    <link rel="stylesheet" href="{{url('highlight/styles/darcula.css')}}">
     <script src="{{url('js/jquery-2.0.3.min.js')}}"></script>
     <script src="{{url('ckeditor/ckeditor.js')}}"></script>
     <script src="{{url('ckeditor/config.js')}}"></script>
     <script src="{{url('ckeditor/adapters/jquery.js')}}"></script>
     <script src="{{url('js/bootstrap.min.js')}}"></script>
     <script src="{{url('js/app.js')}}"></script>
-    <link href="https://cdn.bootcss.com/octicons/4.4.0/font/octicons.css" rel="stylesheet">
+    <script src="{{url('highlight/highlight.pack.js')}}"></script>
     <style>
          /*隐藏滚动条*/
         ::-webkit-scrollbar {display:none}

@@ -47,7 +47,7 @@
                 @endforeach
             </div>
             <div class="col-md-4">
-                <div class="panel panel-primary">
+                <div class="panel panel-primary hidden-xs hidden-sm">
                     <!-- Default panel contents -->
                     <div  id="collapse_panel" class="panel-heading" data-toggle="collapse">
                         <a data-toggle="collapse" href="#collapse">

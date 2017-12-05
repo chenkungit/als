@@ -18,4 +18,6 @@ $(function () {
             $('#collapse_span').addClass('glyphicon glyphicon-chevron-up');
         }
     })
+
+
 })

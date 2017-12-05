@@ -38,14 +38,19 @@
                     <a href="#">
                         <img class="media-object img-circle" src="{{url('logo/default.png')}}" alt="" style="height: 64px;width: 64px">
                     </a>
+
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading">{{\App\User::findorFail($comment->user_id)->name}}</h4>
+                    <h4 class="media-heading form-inline">{{\App\User::findorFail($comment->user_id)->name}}</h4>
+                    {{--<a href="#" id={{'replay'}}> <span class="glyphicon glyphicon-share-alt " style="float: right">回复</span></a>--}}
                     <span class="comment-time">{{$comment->created_at}}</span>
                     <br>
                     <span class="body">
                     {!!$comment->context!!}
                     </span>
+                </div>
+                <div class="hidden">
+                    <textarea class="form-control"></textarea>
                 </div>
             </div>
 
@@ -56,7 +61,7 @@
             </div>
     </div>
     <div class="col-md-4">
-    <div class="panel panel-primary panel-list">
+    <div class="panel panel-primary panel-list hidden-xs hidden-sm">
             <!-- Default panel contents -->
             <div  id="collapse_panel" class="panel-heading" data-toggle="collapse">
                 <a data-toggle="collapse" href="#collapse">
@@ -82,7 +87,10 @@
         $(document).ready(function(){
             CKEDITOR.replace('context', {
                 //filebrowserBrowseUrl: '{{url('uploads/images/')}}',
-                filebrowserUploadUrl: '{{url('/articles/image')}}?_token={{csrf_token()}}'
+                filebrowserUploadUrl: '{{url('/articles/image')}}?_token={{csrf_token()}}',
+                toolbarCanCollapse: true,
+                toolbarStartupExpanded: false,
+                height:200
             });
         });
     </script>
