@@ -15,7 +15,7 @@
     {!! Form::select('category', ['T' => '技术分享', 'N' => '生活随笔'],null,['class'=>'form-control'])!!}
 </div>
 <div class="form-group ">
-    {!! Form::label('Tags') !!}
+    {!! Form::label('Tags (多个标签用逗号隔开)') !!}
     {!! Form::input('text','tags',null,['class'=>'form-control'])!!}
 </div>
 <script>

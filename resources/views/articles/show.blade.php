@@ -44,7 +44,7 @@
                     <span class="comment-time">{{$comment->created_at}}</span>
                     <br>
                     <span class="body">
-                    {{$comment->context}}
+                    {!!$comment->context!!}
                     </span>
                 </div>
             </div>
@@ -77,4 +77,13 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function(){
+            CKEDITOR.replace('context', {
+                //filebrowserBrowseUrl: '{{url('uploads/images/')}}',
+                filebrowserUploadUrl: '{{url('/articles/image')}}?_token={{csrf_token()}}'
+            });
+        });
+    </script>
     @stop
