@@ -14,7 +14,7 @@
                              <span class="icon-bar"></span>
                              <span class="icon-bar"></span>
                          </button>
-                         <a class="navbar-brand" href="{{url('articles')}}"><img src="{{url('logo/als.png')}}" style="width: 120px;height: 120px;margin-top: -50px;"/></a>
+                         <a class="navbar-brand" href="{{url('articles')}}"><img src="{{url('logo/als-big.png')}}" style="width: 120px;height: 50px;margin-top: -14px"/></a>
                      </div>
                      <div class="collapse navbar-collapse" id="navbar-collapse">
                          <ul class="nav navbar-nav">
