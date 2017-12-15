@@ -100,3 +100,72 @@ a:link {
     color: #bdb7b7;
     letter-spacing: 1px;
 }
+
+.dht:hover
+{
+    background-color: #f0ad4e !important;
+}
+.dht
+{
+    transition: 0.5s;
+}
+.active_dht
+{
+    background-color: #337ab7 !important;
+    color:white !important;
+}
+.navbar{
+    border: none;
+}
+.navbar-collapse{
+    height: 50px !important;
+}
+.b_10_3 {
+    overflow: hidden; text-align:center;
+}
+.b_10_3 span {
+    float: left; font-size:16px; line-height:2em;
+}
+.b_10_3 span.bold {
+    font-weight:bold;
+}
+.b_10_3 span:nth-child(1) {
+    width: 35%;
+    text-align: center;
+}
+.b_10_3 span:nth-child(2) {
+    width: 30%;
+    text-align: left;
+}
+.b_10_3 span:nth-child(3) {
+    width: 35%;
+    text-align: left;
+}
+.b_10_3 span:nth-child(4) {
+    width: 35%;
+    text-align: right;
+}
+.b_10_3 span:nth-child(5) {
+    width: 25%;
+    text-align: right;
+}
+.b_10_3 span:nth-child(6) {
+    width: 25%;
+    text-align: right;
+}
+.b_10_3 span:nth-child(7) {
+    width: 50%;
+    text-align: center;
+}
+.b_10_3 span:nth-child(8) {
+    width: 30%;
+    text-align: center;
+}
+.b_10_3 span:nth-child(9) {
+    width: 50%;
+    text-align: right;
+}
+.b_10_3 span:nth-child(10) {
+    width: 40%;
+    text-align: right;
+}

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use function PHPSTORM_META\elementType;
 
 class ArticlesController extends Controller
 {
@@ -23,7 +24,11 @@ class ArticlesController extends Controller
         $articles = Article::latest()->published()->paginate(5);
         //$articles = Article::paginate(5)->published()->get();
         $recentArticles = Article::orderby('hits','desc')->take(6)->get();
-        return view('articles.index',compact('articles','recentArticles'));
+        //获取所有文章的标签
+        $articleTags = Article::latest()->published()->get();
+        //返回属于哪个模块
+        $moduleIndex = 'index';
+        return view('articles.index',compact('articles','recentArticles','moduleIndex','articleTags'));
     }
 
     /**
@@ -34,7 +39,15 @@ class ArticlesController extends Controller
     {
         $articles = Article::latest()->searchColumn($column,$condition,$character)->paginate(5);
         $recentArticles = Article::orderby('hits','desc')->take(6)->get();
-        return view('articles.index',compact('articles','recentArticles'));
+        //获取所有文章的标签
+        $articleTags = Article::latest()->published()->get();
+        //返回属于哪个模块
+        if ($condition=='N')
+            $moduleIndex = 'live';
+        else if ($condition=='T')
+            $moduleIndex = 'tc';
+
+        return view('articles.index',compact('articles','recentArticles','moduleIndex','articleTags'));
     }
 
     /**
@@ -44,7 +57,9 @@ class ArticlesController extends Controller
     {
         $condition = $request->all();
         $articles = Article::latest()->condition($condition['condition'])->paginate(5);
-        return view('articles.index',compact('articles','condition'));
+        //返回属于哪个模块
+        $moduleIndex = 'index';
+        return view('articles.index',compact('articles','condition','moduleIndex'));
     }
 
     /**
@@ -52,7 +67,9 @@ class ArticlesController extends Controller
      */
     public function about()
     {
-        return view('articles.about');
+        //返回属于哪个模块
+        $moduleIndex = 'about';
+        return view('articles.about',compact('moduleIndex'));
     }
     /**
      * Show the form for creating a new resource.
@@ -61,11 +78,12 @@ class ArticlesController extends Controller
      */
     public function create()
     {
+        $moduleIndex = 'create';
         if (\Auth::check()) {
-            return view('articles.create');
+            return view('articles.create',compact('moduleIndex'));
         }else
         {
-            return view('auth.login');
+            return view('auth.login',compact('moduleIndex'));
         }
 
     }

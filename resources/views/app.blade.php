@@ -1,8 +1,11 @@
 @extends('basic')
+@section('style')
+     @yield('style')
+    @endsection
 @section('main')
     <header class="navbar">
         <div class="container">
-             <nav class="navbar navbar-inverse navbar-fixed-top">
+             <nav class="navbar navbar-inverse navbar-fixed-top" >
                  <div class="container-fluid">
                      <!-- Brand and toggle get grouped for better mobile display -->
                      <div class="navbar-header">
@@ -15,11 +18,11 @@
                      </div>
                      <div class="collapse navbar-collapse" id="navbar-collapse">
                          <ul class="nav navbar-nav">
-                             <li class=""><a href="{{url('articles/create')}}"><span class="glyphicon glyphicon-pencil"></span> 发帖</a></li>
-                             <li class="" onclick="changestatue(this)"><a href="{{url('articles')}}"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
-                             <li class="" onclick="changestatue(this)"><a href="{{url('articles/search/category/T/=')}}"><span class="glyphicon glyphicon-globe"></span> 技术分享</a></li>
-                             <li class="" onclick="changestatue(this)"><a href="{{url('articles/search/category/N/=')}}"><span class="glyphicon glyphicon-tint"></span> 生活随笔</a></li>
-                             <li class="" onclick="changestatue(this)"><a href="{{url('articles/about')}}"><span class="glyphicon glyphicon-question-sign"></span> 关于</a></li>
+                             <li class=""><a class="dht" id="create" href="{{url('articles/create')}}"><span class="glyphicon glyphicon-pencil"></span> 发帖</a></li>
+                             <li class=""><a class="dht" id="index" href="{{url('articles')}}"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+                             <li class=""><a class="dht" id="tc" href="{{url('articles/search/category/T/=')}}"><span class="glyphicon glyphicon-globe"></span> 技术分享</a></li>
+                             <li class=""><a class="dht" id="live" href="{{url('articles/search/category/N/=')}}"><span class="glyphicon glyphicon-tint"></span> 生活随笔</a></li>
+                             <li class=""><a class="dht" id="about" href="{{url('articles/about')}}"><span class="glyphicon glyphicon-question-sign"></span> 关于</a></li>
                          </ul>
                          <form class="navbar-form navbar-left " role="search" action="{{url('articles/search')}}" method="post">
                              <div class="form-group">
@@ -66,6 +69,12 @@
             </div>
         </div>
     </div>
-
+    @if(isset($moduleIndex) && !is_null($moduleIndex))
+        <script>
+            $(function(){
+                $("#"+"{!! $moduleIndex !!}").addClass("active_dht");
+            })
+        </script>
+    @endif
 @endsection
 

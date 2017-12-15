@@ -13,10 +13,12 @@
     <script src="{{url('ckeditor/adapters/jquery.js')}}"></script>
     <script src="{{url('js/bootstrap.min.js')}}"></script>
     <script src="{{url('js/app.js')}}"></script>
+    <script src="{{url('js/tagcanvas.min.js')}}"></script>
     <script src="{{url('highlight/highlight.pack.js')}}"></script>
     <style>
          /*隐藏滚动条*/
         ::-webkit-scrollbar {display:none}
+        @yield('style')
     </style>
 </head>
 <body style="background-color:#f9f9f9" >

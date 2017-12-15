@@ -1,7 +1,21 @@
 @extends('app')
 
+@section('style')
 
+    @endsection
 @section('content')
+        <?php
+            $tags = array();
+            foreach($articleTags as $article)
+            {
+                $tag=explode(',',$article->tags);
+                foreach ($tag as $t)
+                {
+                    array_push($tags,$t);
+                }
+            }
+            $tags = array_unique($tags);
+        ?>
         <div class="row">
             <div class="col-md-8">
                 @foreach($articles as $article)
@@ -67,12 +81,21 @@
                             </ul>
                     </div>
 
+                </div>
+                <div class="panel panel-primary">
+                    <div class="b_10_3">
+                        <canvas id="myCanvas"></canvas>
+                        <div id="tags">
+                            @foreach($tags as $g)
+                                <a href="#">{{$g}}</a>
+                            @endforeach
+                        </div>
 
+                    </div>
                 </div>
             </div>
         </div>
         <div>
             {!!$articles->render()!!}
         </div>
-
     @stop
