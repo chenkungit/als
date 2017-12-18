@@ -57,9 +57,12 @@ class ArticlesController extends Controller
     {
         $condition = $request->all();
         $articles = Article::latest()->condition($condition['condition'])->paginate(5);
+        //获取所有文章的标签
+        $articleTags = Article::latest()->published()->get();
+        $recentArticles = Article::orderby('hits','desc')->take(6)->get();
         //返回属于哪个模块
         $moduleIndex = 'index';
-        return view('articles.index',compact('articles','condition','moduleIndex'));
+        return view('articles.index',compact('articles','condition','moduleIndex','articleTags','recentArticles'));
     }
 
     /**
