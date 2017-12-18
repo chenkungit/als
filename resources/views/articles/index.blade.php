@@ -3,6 +3,27 @@
 @section('style')
 
     @endsection
+@section('splider')
+<section class="pc-banner">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-slide-center none-effect">
+                <a href="#"><img src="{{url('images/4.jpg')}}" ></a>
+            </div>
+            <div class="swiper-slide"><a href="#"><img src="{{url('images/1.jpg')}}" ></a></div>
+            <div class="swiper-slide"><a href="#"><img src="{{url('images/2.jpg')}}" ></a></div>
+            <div class="swiper-slide"><a href="#"><img src="{{url('images/3.jpg')}}" ></a></div>
+            <div class="swiper-slide"><a href="#"><img src="{{url('images/5.jpg')}}" ></a></div>
+        </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="button">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</section>
+@endsection
 @section('content')
         <?php
             $tags = array();
@@ -16,6 +37,9 @@
             }
             $tags = array_unique($tags);
         ?>
+
+
+
         <div class="row">
             <div class="col-md-8">
                 @foreach($articles as $article)

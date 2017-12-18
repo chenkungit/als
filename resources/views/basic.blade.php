@@ -5,6 +5,7 @@
     <link rel="icon" href="{{url('logo/als16x16.ico')}}">
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url('css/swiper.min.css')}}">
     <link rel="stylesheet" href="{{url('css/app.css')}}">
     <link rel="stylesheet" href="{{url('highlight/styles/darcula.css')}}">
     <script src="{{url('js/jquery-2.0.3.min.js')}}"></script>
@@ -15,6 +16,7 @@
     <script src="{{url('js/app.js')}}"></script>
     <script src="{{url('js/tagcanvas.min.js')}}"></script>
     <script src="{{url('highlight/highlight.pack.js')}}"></script>
+    <script src="{{url('js/swiper.min.js')}}"></script>
     <style>
          /*隐藏滚动条*/
         ::-webkit-scrollbar {display:none}

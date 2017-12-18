@@ -3,7 +3,7 @@
      @yield('style')
     @endsection
 @section('main')
-    <header class="navbar">
+    <header class="navbar" style="margin-bottom: 0px">
         <div class="container">
              <nav class="navbar navbar-inverse navbar-fixed-top" >
                  <div class="container-fluid">
@@ -55,8 +55,13 @@
              </nav>
         </div>
     </header>
-     <div class="container" id="main">
-        @yield('content')
+     <div class="container-fluid" style="padding: 0;">
+         <div class="container-fluid" style="padding: 0;margin-bottom: 35px">
+             @yield('splider')
+         </div>
+         <div class="container"  id="main">
+             @yield('content')
+         </div>
      </div>
     <div id="footer" class="copyright">
         <div class="container">
