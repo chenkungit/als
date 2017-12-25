@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="col-md-8">
+    <div class="col-md-12">
         <h1 class="post-title">{{$articles->title}}</h1>
         <ol class="breadcrumb display" >
             <li>{{App\User::findorFail($articles->user_id)->name}}</li>
@@ -60,28 +60,28 @@
                 {!!$comments->render()!!}
             </div>
     </div>
-    <div class="col-md-4">
-    <div class="panel panel-primary panel-list hidden-xs hidden-sm">
-            <!-- Default panel contents -->
-            <div  id="collapse_panel" class="panel-heading" data-toggle="collapse">
-                <a data-toggle="collapse" href="#collapse">
-                    <div class="panel-title" style="color: white; font-size: 14px">
-                        <span class="glyphicon glyphicon-fire"></span> 最近热文
-                        <span id="collapse_span" style="float: right" class="glyphicon glyphicon-chevron-up"></span>
-                    </div>
-                </a>
-            </div>
+    {{--<div class="col-md-4">--}}
+    {{--<div class="panel panel-primary panel-list hidden-xs hidden-sm">--}}
+            {{--<!-- Default panel contents -->--}}
+            {{--<div  id="collapse_panel" class="panel-heading" data-toggle="collapse">--}}
+                {{--<a data-toggle="collapse" href="#collapse">--}}
+                    {{--<div class="panel-title" style="color: white; font-size: 14px">--}}
+                        {{--<span class="glyphicon glyphicon-fire"></span> 最近热文--}}
+                        {{--<span id="collapse_span" style="float: right" class="glyphicon glyphicon-chevron-up"></span>--}}
+                    {{--</div>--}}
+                {{--</a>--}}
+            {{--</div>--}}
 
-            <div id="collapse" class="panel-collapse collapse in body" >
-                <!-- List group -->
-                <ul class="list-group " >
-                    @foreach($recentArticles as $recentArticle)
-                        <a href="{{url('articles/'.$recentArticle->id)}}" class="line-limte-length list-group-item" >{{$recentArticle->title}}<span class="badge" style="background-color: #337AB7">{{$recentArticle->hits}}</span></a>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-    </div>
+            {{--<div id="collapse" class="panel-collapse collapse in body" >--}}
+                {{--<!-- List group -->--}}
+                {{--<ul class="list-group " >--}}
+                    {{--@foreach($recentArticles as $recentArticle)--}}
+                        {{--<a href="{{url('articles/'.$recentArticle->id)}}" class="line-limte-length list-group-item" >{{$recentArticle->title}}<span class="badge" style="background-color: #337AB7">{{$recentArticle->hits}}</span></a>--}}
+                    {{--@endforeach--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
     <script>
         $(document).ready(function(){
